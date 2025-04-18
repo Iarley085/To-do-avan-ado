@@ -1,2 +1,2 @@
-# to-do-avan-ado
+# to-do-avançado
 estudando um pouco javascript
