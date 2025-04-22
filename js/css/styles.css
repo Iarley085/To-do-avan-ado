@@ -44,9 +44,10 @@ button i {
 input, select{
     padding: 0.25rem 0.5rem;
     border-radius: 10px;
+    
 }
 
-.hider{
+.hide{
     display: none;
 }
 
@@ -157,10 +158,12 @@ input, select{
 
 .done {
     background-color: #395169;
-
 }
 .done h3 {
     color: #fff;
     text-decoration: line-through;
     font-style: italic;
+}
+.done button, i {
+    color: red;
 }
