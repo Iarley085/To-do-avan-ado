@@ -1,5 +1,5 @@
 // Seleção de elemenentos
-const todoForm = document.querySelector("#todo-form");
+const todoForm = document.querySelector("#todo-form"); 
 const todoInput = document.querySelector("#todo-input");
 const todoList = document.querySelector("#todo-list");
 const editForm = document.querySelector("#edit-form");
@@ -9,7 +9,30 @@ const cancelEditBtn = document.querySelector("#cancel-edit-btn");
 let oldInputValue;
 
 // Funcões
- const saveTodo = (Text) => {
+    const searchInput = document.querySelector("#search-input"); 
+
+    searchInput.addEventListener("keyup", (e) => { 
+    const search = e.target.value; 
+    getSearchedTodos(search.toLowerCase()); 
+});
+
+
+  const eraseBtn = document.querySelector("#erase-button");
+
+  eraseBtn.addEventListener("click", (e) => { 
+  e.preventDefault();
+  searchInput.value = "";
+  searchInput.dispatchEvent(new Event("keyup")); 
+});
+
+  const filterSelect = document.querySelector("#filter-select");
+
+  filterSelect.addEventListener("change", (e) => {
+  const filterValue = e.target.value;
+  filterTodos(filterValue); 
+});
+
+    const saveTodo = (Text) => {
     const todo = document.createElement("div");
     todo.classList.add("todo");
 
@@ -36,6 +59,7 @@ let oldInputValue;
 
     todoInput.value = "";
     todoInput.focus();
+    
  };
 
  const toggleForms = () => {
@@ -53,7 +77,7 @@ let oldInputValue;
     if (todoTitle.innerText === oldInputValue) {
       todoTitle.innerText = text;
 
-      // Utilizando dados da localStorage
+
       updateTodoLocalStorage(oldInputValue, text);
     }
   });

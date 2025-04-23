@@ -166,4 +166,29 @@ input, select{
 }
 .done button, i {
     color: red;
-}
+} 
+
+@media (max-width: 500px) {
+    .form-control {
+      flex-direction: column;
+      gap: 0.5rem; 
+    }
+  
+    .form-control input {
+      width: 100%; 
+      margin-right: 0;
+    }
+
+    .form-control button {
+        width: 50%;
+        align-self: center;
+    }}
+
+    @media (max-width: 500px) {
+        .todo-container {
+          margin: 1rem;
+          padding: 1rem;
+        }
+      }
+      
+  
